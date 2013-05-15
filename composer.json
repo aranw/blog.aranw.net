@@ -1,7 +1,8 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-		"daylerees/kurenai": "1.0.0"
+		"daylerees/kurenai": "1.0.0",
+		"raven/raven": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
