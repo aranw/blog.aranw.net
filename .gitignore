@@ -3,6 +3,7 @@
 /app/storage
 /content
 /app/config/app.php
+/app/config/raven.php
 composer.phar
 composer.lock
 .DS_Store
