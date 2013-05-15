@@ -12,22 +12,25 @@ use Controller;
 class BlogController extends Controller
 {
     /**
+     * Stores the Article Repository for collecting blog posts
+     */
+    public $blog;
+
+    /**
+     * Constructor
+     */
+    public function __construt()
+    {
+        $this->blog = App::make('blog');
+    }
+
+    /**
      * Show the index page for the blog.
      */
     public function showIndex()
     {
-        $blog = App::make('blog');
-        $data['posts'] = $blog->paginate(3);
+        $data['posts'] = $this->blog->paginate(3);
         return View::make('index', $data);
-    }
-
-    /**
-     * Show the about me page.
-     */
-    public function showAbout()
-    {
-        $data['title'] = 'About me';
-        return View::make('about', $data);
     }
 
     /**
@@ -37,8 +40,7 @@ class BlogController extends Controller
      */
     public function showArticle($slug)
     {
-        $blog = App::make('blog');
-        $post = $blog->findBySlug($slug);
+        $post = $this->blog->findBySlug($slug);
         $data['post'] = $post;
         $data['title'] = $post->getTitle();
         $data['description'] = strip_tags($post->getExcerpt());
@@ -50,8 +52,7 @@ class BlogController extends Controller
      */
     public function showSitemap()
     {
-        $blog = App::make('blog');
-        $data['posts'] = $blog->findAll();
+        $data['posts'] = $this->blog->findAll();
         return View::make('sitemap', $data);
     }
 
@@ -60,20 +61,10 @@ class BlogController extends Controller
      */
     public function showRss()
     {
-        $blog = App::make('blog');
-        $data['posts'] = $blog->findAll();
+        $data['posts'] = $this->blog->findAll();
         $rss = View::make('rss', $data)->render();
         $response = Response::make($rss, 200);
         $response->headers->set('Content-Type', 'application/rss+xml');
         return $response;
-    }
-
-    /**
-     * Show a 404 page.
-     */
-    public function showFour()
-    {
-        $data['title'] = '404 Page Not Found';
-        return View::make('404', $data);
     }
 }

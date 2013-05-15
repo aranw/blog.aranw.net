@@ -7,13 +7,13 @@ require(__DIR__.'/Helper/cdn.php');
  * Share a default title across all views. This can be overriden within
  * the controller action.
  */
-View::share('title', 'Web development, design, and other nerdy topics!');
+View::share('title', 'PHP Backend Web Developer based in Yorkshire working with PHP Frameworks!');
 
 /**
  * Share a default description across all views. This can be overriden within
  * the controller action.
  */
-View::share('description', 'A collection of articles about web development and design and a number of tools to make our lives as developers easier.');
+View::share('description', 'Articles about web development, PHP and modern technologies.');
 
 /**
  * Bind the article repository within the container.
@@ -49,7 +49,7 @@ Route::get('/', array(
  */
 Route::get('/about', array(
     'as'    => 'about',
-    'uses'  => 'Website\Controller\BlogController@showAbout'
+    'uses'  => 'Website\Controller\PageController@showAbout'
 ));
 
 /**
@@ -57,7 +57,7 @@ Route::get('/about', array(
  */
 Route::get('/404', array(
     'as'    => '404',
-    'uses'  => 'Website\Controller\BlogController@showFour'
+    'uses'  => 'Website\Controller\PageController@showFour'
 ));
 
 /**
