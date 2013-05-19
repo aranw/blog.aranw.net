@@ -4,6 +4,17 @@
 require(__DIR__.'/Helper/cdn.php');
 
 /**
+ * Register Exception Handler and Error Handler
+ */
+$client = new Raven_Client(Config::get('raven.url'));
+
+App::instance('raven', $client);
+
+$error_handler = new Raven_ErrorHandler($client);
+$error_handler->registerExceptionHandler();
+$error_handler->registerErrorHandler();
+
+/**
  * Share a default title across all views. This can be overriden within
  * the controller action.
  */

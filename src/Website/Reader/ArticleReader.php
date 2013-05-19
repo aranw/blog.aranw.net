@@ -3,6 +3,7 @@
 namespace Website\Reader;
 
 use File;
+use Exception;
 use Website\Factory\ArticleFactory;
 use Kurenai\DocumentParser;
 
@@ -65,7 +66,17 @@ class ArticleReader
             try {
                 $sources[] = File::get($file);
             }
-            catch (\Exception $e) {
+            catch (Exception $e) {
+
+                $client = App::make('raven');
+
+                $event_id = $client->getIdent($client->captureException($e, array(
+                    'extra' => array(
+                        'message' => 'File could not be opened.',
+                        'file' => $file
+                    ),
+                )));
+
                 continue;
                 // TODO: Log file could not be opened.
             }
@@ -88,7 +99,17 @@ class ArticleReader
                 if ($document = $documentParser->parse($source))
                     $documents[] = $document;
             }
-            catch (\Exception $e) {
+            catch (Exception $e) {
+
+                $client = App::make('raven');
+
+                $event_id = $client->getIdent($client->captureException($e, array(
+                    'extra' => array(
+                        'message' => 'Article could not be parsed.',
+                        'file' => $file
+                    ),
+                )));
+
                 continue;
                 // TODO: Log article could not be parsed.
             }
