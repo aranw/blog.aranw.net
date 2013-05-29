@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    YOUR-PROJECT.CSS
+\*------------------------------------*/
+/**
+ * 
+ * sass --watch your-project.scss:your-project.min.css --style compressed
+ * 
+ * Here we set up some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+
+
+/**
+ * Setup
+ */
+@import "vars";
+@import "inuit.css/inuit";
+
+
+/**
+ * She’s all yours, cap’n... Begin importing your stuff here.
+ */
+/*------------------------------------*\
+    $VARS
+\*------------------------------------*/
+$headings-font:                 "nimbus-sans";
+$font:                          "museo-sans";
+$color:                #333;
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+html{
+    font-family: $font;
+    font-weight: 300;
+}
+.blog 
+{
+    padding: 0 $base-spacing-unit +px $base-spacing-unit +px $base-spacing-unit +px;
+}
+
+.blog, .blog__main .gw, .blog__header .gw
+{
+    max-width: 740px;
+    margin: 0 auto;
+}
+/*------------------------------------*\
+    $TYPE
+\*------------------------------------*/
+h1, h2, h3, h4, h5, h6{
+    font-family:$headings-font;
+    color:$color;
+}
+
+.blog__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0 0 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, .85);
+    &, & h1, & a {
+        color: #fff;
+    }
+}
+
+.blog__main {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.post__header {
+    margin-bottom: 0;
+}
+
+.post__header > a, .post .go {
+	color: $color;
+}
+
+.post__posted {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.blog__main .gw {
+    margin-top: 100px;
+}
+
+.blog__footer {
+    position: relative;
+}
