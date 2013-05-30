@@ -11,4 +11,7 @@
 |
 */
 
-include __DIR__.'/../src/Website/routes.php';
+Route::get('/', function()
+{
+	return View::make('hello');
+});

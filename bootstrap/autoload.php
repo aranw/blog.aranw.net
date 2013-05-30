@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+define('LARAVEL_START', microtime(true));
+
+>>>>>>> c0a26f50ac9ec49fd64ec2ccdb74370ea4235500
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader
@@ -16,6 +21,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
+<<<<<<< HEAD
 | Register The Composer Auto Loader
 |--------------------------------------------------------------------------
 |
@@ -23,6 +29,14 @@ require __DIR__.'/../vendor/autoload.php';
 | for our application. We just need to utilize it! We'll require it
 | into the script here so that we do not have to worry about the
 | loading of any our classes "manually". Feels great to relax.
+=======
+| Include The Compiled Class File
+|--------------------------------------------------------------------------
+|
+| To dramatically increase your application's performance, you may use a
+| compiled class file which contains all of the classes commonly used
+| by a request. The Artisan "optimize" is used to create this file.
+>>>>>>> c0a26f50ac9ec49fd64ec2ccdb74370ea4235500
 |
 */
 
@@ -33,6 +47,22 @@ if (file_exists($compiled = __DIR__.'/compiled.php'))
 
 /*
 |--------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+| Setup Patchwork UTF-8 Handling
+|--------------------------------------------------------------------------
+|
+| The Patchwork library provides solid handling of UTF-8 strings as well
+| as provides replacements for all mb_* and iconv type functions that
+| are not available by default in PHP. We'll setup this stuff here.
+|
+*/
+
+Patchwork\Utf8\Bootup::initMbstring();
+
+/*
+|--------------------------------------------------------------------------
+>>>>>>> c0a26f50ac9ec49fd64ec2ccdb74370ea4235500
 | Register The Laravel Auto Loader
 |--------------------------------------------------------------------------
 |
