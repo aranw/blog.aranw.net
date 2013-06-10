@@ -10,7 +10,7 @@
     <meta name="keywords" content="aran,wilkinson,aranw,php,php5,laravel,framework" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="{{ URL::to('assets/css/blog.min.css') }}">
-    <link rel="alternate" type="application/rss+xml" title="Dayle Rees RSS Feed" href="{{ route('rss') }}" />
+    <link rel="alternate" type="application/rss+xml" title="Aran Wilkinson RSS Feed" href="{{ route('rss') }}" />
     <script type="text/javascript" src="//use.typekit.net/fpq2mmx.js" onload="try{Typekit.load();}catch(e){}" async></script>
     <script src="{{ URL::to('assets/js/modernizr-2.6.2.min.js') }}"></script>
     <script type="text/javascript">
@@ -52,12 +52,12 @@
     <header class="blog__header">
         <div class="gw">
             <div class="g one-half">
-                <h1><a href="<?php echo URL::to('/'); ?>">Aran Wilkinson</a></h1>
+                <h1><a href="{{ URL::to('/') }}">Aran Wilkinson</a></h1>
             </div>
             <div class="g one-half">
                 <ul class="nav nav--block fr">
-                    <li><a href="<?php echo URL::to('about/'); ?>">About</a></li>
-                    <li><a href="<?php echo URL::to('contact/'); ?>">Contact</a></li>
+                    <li><a href="{{ URL::to('about/') }}">About</a></li>
+                    <!-- <li><a href="{{ URL::to('contact/') }}">Contact</a></li> -->
                 </ul>
             </div>
         </div>

@@ -19,7 +19,7 @@ class BlogController extends Controller
     /**
      * Constructor
      */
-    public function __construt()
+    public function __construct()
     {
         $this->blog = App::make('blog');
     }

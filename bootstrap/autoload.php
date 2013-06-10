@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-=======
 define('LARAVEL_START', microtime(true));
 
->>>>>>> c0a26f50ac9ec49fd64ec2ccdb74370ea4235500
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader
@@ -21,34 +18,22 @@ require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
-<<<<<<< HEAD
-| Register The Composer Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader
-| for our application. We just need to utilize it! We'll require it
-| into the script here so that we do not have to worry about the
-| loading of any our classes "manually". Feels great to relax.
-=======
 | Include The Compiled Class File
 |--------------------------------------------------------------------------
 |
 | To dramatically increase your application's performance, you may use a
 | compiled class file which contains all of the classes commonly used
 | by a request. The Artisan "optimize" is used to create this file.
->>>>>>> c0a26f50ac9ec49fd64ec2ccdb74370ea4235500
 |
 */
 
 if (file_exists($compiled = __DIR__.'/compiled.php'))
 {
-	require $compiled;
+    require $compiled;
 }
 
 /*
 |--------------------------------------------------------------------------
-<<<<<<< HEAD
-=======
 | Setup Patchwork UTF-8 Handling
 |--------------------------------------------------------------------------
 |
@@ -62,7 +47,6 @@ Patchwork\Utf8\Bootup::initMbstring();
 
 /*
 |--------------------------------------------------------------------------
->>>>>>> c0a26f50ac9ec49fd64ec2ccdb74370ea4235500
 | Register The Laravel Auto Loader
 |--------------------------------------------------------------------------
 |
@@ -87,5 +71,5 @@ Illuminate\Support\ClassLoader::register();
 
 if (is_dir($workbench = __DIR__.'/../workbench'))
 {
-	Illuminate\Workbench\Starter::start($workbench);
+    Illuminate\Workbench\Starter::start($workbench);
 }
